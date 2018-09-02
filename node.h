@@ -11,7 +11,14 @@ struct Node {
     Node* next;
     Node* prev;
 
-    void killSelf();
+    Node <T>(): next(nullptr){};
+
+    void killSelf(){
+      if (next){
+        next->killSelf();
+      }
+      delete this;
+    }
     void print_next();
 };
 

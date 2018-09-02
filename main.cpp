@@ -6,7 +6,7 @@
 #include "list.h"
 
 using namespace std;
-
+/*
 #define MIN 100
 #define MAX 500
 
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
         ++ite;
     }
     assert(test.get(position) == *ite && "Something is wrong with the get method or the iterator");
-    
+
     ite = test.begin();
     for (int i = 0; i < numberOfElements - 1; i++) {
         ++ite;
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 int generateRandomInt(int min, int max) {
     mt19937 rng;
     rng.seed(random_device()());
-    uniform_int_distribution<mt19937::result_type> distribution(min, max); 
+    uniform_int_distribution<mt19937::result_type> distribution(min, max);
     return distribution(rng);
 }
 
@@ -92,7 +92,7 @@ void insertIntoList(List<int> &numbers) {
         case PUSH_FRONT: numbers.push_front(numberToInsert); break;
         case PUSH_BACK: numbers.push_back(numberToInsert); break;
     }
-} 
+}
 
 void removeFromList(List<int> &numbers) {
     const int action = generateRandomInt(2, 3);
@@ -100,4 +100,38 @@ void removeFromList(List<int> &numbers) {
         case POP_FRONT: numbers.pop_front(); break;
         case POP_BACK: numbers.pop_back(); break;
     }
-} 
+}*/
+
+int main() {
+  List<int>* numbers= new List<int>;
+
+  numbers -> push_front(5);
+  numbers -> push_front(3);
+  // numbers -> push_front(8);
+  // numbers -> push_front(2);
+  //numbers -> push_back(7);
+  numbers -> pop_back();
+  //numbers -> pop_front();
+  numbers -> clear();
+
+  // cout << "Imprime normal: ";
+  // Iterator<int> It= numbers -> begin();
+  // for (int i=0; i<numbers -> size(); i++){//print normal
+  //   cout << *It << ",";
+  //   ++It;
+  // }
+  // It=numbers -> end();
+  // cout << endl;
+  // cout << "Imprime alrevez: ";
+  // for (int i=0; i<numbers -> size(); i++){//print reverse
+  //   cout << *It << ",";
+  //   --It;
+  // }
+  cout << endl;
+  cout << "Tama;o: " << numbers -> size() << endl;
+  cout << "Vacio?: " << numbers -> empty() << endl;
+  //cout << numbers -> front();
+  //cout << "Posicion 6: " << numbers -> get(6) << endl;
+
+  return 0;
+}
