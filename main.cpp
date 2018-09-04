@@ -6,7 +6,7 @@
 #include "list.h"
 
 using namespace std;
-/*
+
 #define MIN 100
 #define MAX 500
 
@@ -100,38 +100,4 @@ void removeFromList(List<int> &numbers) {
         case POP_FRONT: numbers.pop_front(); break;
         case POP_BACK: numbers.pop_back(); break;
     }
-}*/
-
-int main() {
-  List<int>* numbers= new List<int>;
-
-  numbers -> push_front(5);
-  numbers -> push_front(3);
-  // numbers -> push_front(8);
-  // numbers -> push_front(2);
-  //numbers -> push_back(7);
-  numbers -> pop_back();
-  //numbers -> pop_front();
-  numbers -> clear();
-
-  // cout << "Imprime normal: ";
-  // Iterator<int> It= numbers -> begin();
-  // for (int i=0; i<numbers -> size(); i++){//print normal
-  //   cout << *It << ",";
-  //   ++It;
-  // }
-  // It=numbers -> end();
-  // cout << endl;
-  // cout << "Imprime alrevez: ";
-  // for (int i=0; i<numbers -> size(); i++){//print reverse
-  //   cout << *It << ",";
-  //   --It;
-  // }
-  cout << endl;
-  cout << "Tama;o: " << numbers -> size() << endl;
-  cout << "Vacio?: " << numbers -> empty() << endl;
-  //cout << numbers -> front();
-  //cout << "Posicion 6: " << numbers -> get(6) << endl;
-
-  return 0;
 }

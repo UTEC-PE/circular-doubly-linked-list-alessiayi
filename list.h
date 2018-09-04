@@ -62,7 +62,7 @@ class List {
       };
       void pop_front(){
           if(!start){
-            throw "Lista Vacia";
+            throw "NO";
           }
           if (size()==1){
             start=nullptr;
@@ -83,7 +83,7 @@ class List {
         };
       void pop_back(){
         if (!start){
-          throw "Lista Vacia";
+          throw "NO";
         }
         if (size()==1){
           start=nullptr;
@@ -124,7 +124,14 @@ class List {
         }
       };
       void concat(List<T> &other){
-        
+        if (!other.start){
+          throw "NO";
+        }
+        else{
+          for (int i=0; i<other.size(); i++){
+            push_back(other.get(i));
+          }
+        }
       };
       bool empty(){
         return !start;
