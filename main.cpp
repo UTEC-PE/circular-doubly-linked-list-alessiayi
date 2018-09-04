@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
         ++ite;
     }
     assert(test.get(position) == *ite && "Something is wrong with the get method or the iterator");
-    
+
     ite = test.begin();
     for (int i = 0; i < numberOfElements - 1; i++) {
         ++ite;
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 int generateRandomInt(int min, int max) {
     mt19937 rng;
     rng.seed(random_device()());
-    uniform_int_distribution<mt19937::result_type> distribution(min, max); 
+    uniform_int_distribution<mt19937::result_type> distribution(min, max);
     return distribution(rng);
 }
 
@@ -92,7 +92,7 @@ void insertIntoList(List<int> &numbers) {
         case PUSH_FRONT: numbers.push_front(numberToInsert); break;
         case PUSH_BACK: numbers.push_back(numberToInsert); break;
     }
-} 
+}
 
 void removeFromList(List<int> &numbers) {
     const int action = generateRandomInt(2, 3);
@@ -100,4 +100,4 @@ void removeFromList(List<int> &numbers) {
         case POP_FRONT: numbers.pop_front(); break;
         case POP_BACK: numbers.pop_back(); break;
     }
-} 
+}
