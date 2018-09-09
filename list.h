@@ -18,10 +18,10 @@ class List {
       List() : start(nullptr), nodes(0) {};//Constructor
 
       T front(){
-        return start -> data;
+        return start -> data; // Falta controlar el caso vacío
       };
       T back(){
-        return start -> prev -> data;
+        return start -> prev -> data; // Falta controlar el caso vacío
       };
       void push_front(T value){
         Node<T>* Tmp=new Node<T>;
@@ -119,13 +119,13 @@ class List {
               c++;
               Tmp=Tmp -> next;
             }
-            throw "NO";
+            throw "NO"; // Falta return 
           }
         }
       };
       void concat(List<T> &other){
         if (!other.start){
-          throw "NO";
+          throw "NO"; // Si debería poderse, solo retornaría la lista actual
         }
         else{
           for (int i=0; i<other.size(); i++){
@@ -145,11 +145,11 @@ class List {
         }
       };
       Iterator<T> begin(){
-        Iterator<T>* It=new Iterator<T>(start);
+        Iterator<T>* It=new Iterator<T>(start); // No es necesario que sea puntero
         return *It;
       };
       Iterator<T> end(){
-        Iterator<T>* It=new Iterator<T>(start->prev);
+        Iterator<T>* It=new Iterator<T>(start->prev); // No es necesario que sea puntero
         return *It;
       };
 
